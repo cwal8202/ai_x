@@ -1,0 +1,8 @@
+__pycache__  = import 할때 생성됨.
+__init__  =  폳더 안에 있어야만 해당 폴더를 *패키지*로 인식.
+
+sys.path = import 가능한 경로만 List형태로 보여줌. 추가 하고싶으면
+sys.path.append 로 추가 가능.
+
+
+클래스 변수는 static 메모리, heap 메모리 둘 다 저장됨(원리 공부해야함)
