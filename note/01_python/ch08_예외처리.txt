@@ -1,0 +1,40 @@
+1절, 2절. 예외처리(try ~ except)
+예외가 나는 것에 대해 예외를 처리 하는 방법
+```
+try:
+    예외가 발생할 수도 있는 구문
+
+except [예외타입 as e]:
+    예외가 발생되면 수행할 구문
+
+else:
+    try절을 수행하다 예외가 발생 안되면 else절을 한번 수행
+
+finally:
+    예외가 발생 안하면 try-else-finally절 수행
+    예외가 발생하면 try 수행 중 except - finally절 수행
+```
+
+3. raise - 강제 예외 발생
+class LengthZeroError(Exception)
+	pass
+if len(data)==0:
+        raise LengthZeroError("매개변수가 0인 예외입니다")
+	# 사용자 에러 발생시킴
+
+4. 추상클래스
+class Shape:
+    def __init__(self):
+        raise NotImplementedError('추상 클래스 역할')
+    def calc_area(self):
+        raise NotImplementedError('추상 메소드 역할')
+	# 추상 클래스 및 메소드 강제 예외 발생
+
+5. with - 파일 open 이후 close 자동으로 해줌
+f = open('data/ch08.txt', 'r')
+print(f.read())
+f.close()
+
+with open('data/ch08.txt', 'r') as f:
+    print(f.read())
+# with 절 이후에는 자동 close() 실행

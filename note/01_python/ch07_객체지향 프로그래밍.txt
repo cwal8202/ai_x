@@ -1,0 +1,42 @@
+# 요약
+* 객체를 이용하면 객체에 정보를 저장하고, 그 정보를 이용해서 어떤 기능을 수행 할 수 있다**
+* 객체 = 데이터(변수:객체마다 고유의 값) + 기능(메소드, 함수)
+
+* 객체를 만들기 위한 틀 => 클래스
+    class Test:			# 클래스명
+        '닥스트링' 			# 클래스에 대한 설명
+        class_var = "class"       	# 클래스변수명 = 값
+        def __init__(self, name="test"):   # 기본값을 "test"로 가지는 매개변수
+            self.name = name               # 인스턴스(일반)변수 값
+              
+        def method(self):   	            # 인스턴스 메소드(일반함수)의 매개변수는 self를 반드시 포함
+	pass
+        @classmethod
+        def classmethod(cls):		# 클래스 메소드 (호출 시 Test.classmthod() 이렇게 호출
+            pass
+        @staticmethod	 	# static 메소드
+        def staticmethod():
+            pass
+ 
+    test = Test()
+    test.method()
+    Test.classmethod()
+    Test.staticmethod()
+
+# 4절. 상속 class Test_inherit(Test) : 
+	__count : 0	# static 변수명.  __변수명 작성해야함
+	def __init__(self, name, gender)
+	     super().__init__(self, name)
+	     self.gender = gender
+	
+	def __str__(self) :
+		pass
+	def get_count(self):
+		return Test_inherit._Test_inherit__count	# static 변수 사용시 작성 해야함
+이렇게 상속 가능하며
+ # 이렇게 부모 호출 가능하다.
+부모의 메소드 오버라이딩 가능하며
+파이썬은 오버로딩이 불가능하다.
+
+static 변수는 __변수명 # 이렇게 선언이 되며
+호출할땐 class명._class명__static변수명 ex) Student._Student__count

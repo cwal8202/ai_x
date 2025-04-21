@@ -6,3 +6,4 @@ sys.path.append 로 추가 가능.
 
 
 클래스 변수는 static 메모리, heap 메모리 둘 다 저장됨(원리 공부해야함)
+python 변수가 메모리 저장되는거 공부하기
