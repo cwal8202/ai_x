@@ -1,0 +1,32 @@
+1절. txt파일에 데이터 저장 및 불러오기
+# mode : 'r' 또는 'rt' : text 읽기 모드
+             'rb' : 바이너리 읽기 모드
+             'w' 또는 'wt' : text 쓰기 모드
+             'wb' : 바이너리 쓰기 모드
+             'a' 또는 'at' : text 추가 모드(파일이 있으면 append, 파일이 없으면 파일 생성)
+             읽기모드에서는 파일이 없으면 예외/쓰기모드에서는 폴더가 없으면 예외
+# encoding
+    	euc-kr (한글완성형)  믜x
+        	cp949(ANSI)  (확정된 한글완성형) : open()함수 기본 encoding방식(window)
+        	utf-8  (한글조합형) : open()함수 기본 encoding 방식(mac, linux)
+- 쓰기
+with open('data/ch09.txt', 'w') as f :
+# 방법 1. 한줄씩 작성
+    f.write('홍길동, 33, 신길1동\n')
+    f.write('김길동, 33, 신림1동\n')
+# 방법 2. for문 사용.
+    textlist = ['홍길동, 33, 신길1동\n', '김길동, 33, 신림1동\n']
+    for line in textlist:
+        f.write(line)
+# 방법 3. list 한번에 작성
+    f.writelines(textlist)
+- 읽기
+# 방법 1. 한줄씩 읽기
+with open('data/ch09.txt', 'r') as f:
+    line = f.readline()
+    while line!='':
+        print(line, end='')
+        line = f.readline()
+# 방법 2. 모든 줄 읽기
+    line = f.readlines()
+    
