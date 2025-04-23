@@ -9,24 +9,29 @@
     	euc-kr (한글완성형)  믜x
         	cp949(ANSI)  (확정된 한글완성형) : open()함수 기본 encoding방식(window)
         	utf-8  (한글조합형) : open()함수 기본 encoding 방식(mac, linux)
-- 쓰기
-with open('data/ch09.txt', 'w') as f :
-# 방법 1. 한줄씩 작성
-    f.write('홍길동, 33, 신길1동\n')
-    f.write('김길동, 33, 신림1동\n')
-# 방법 2. for문 사용.
-    textlist = ['홍길동, 33, 신길1동\n', '김길동, 33, 신림1동\n']
-    for line in textlist:
-        f.write(line)
-# 방법 3. list 한번에 작성
-    f.writelines(textlist)
-- 읽기
-# 방법 1. 한줄씩 읽기
-with open('data/ch09.txt', 'r') as f:
-    line = f.readline()
-    while line!='':
-        print(line, end='')
-        line = f.readline()
-# 방법 2. 모든 줄 읽기
-    line = f.readlines()
-    
+- txt파일 쓰기
+  with open('data/ch09.txt', 'w') as f :
+  # 방법 1. 한줄씩 작성
+      f.write('홍길동, 33, 신길1동\n')
+  # 방법 2. list 한번에 작성
+      f.writelines(textlist)
+  - txt파일 읽기
+  # 방법 1. 한줄씩 읽기
+  with open('data/ch09.txt', 'r') as f:
+      line = f.readline()
+      while line!='':
+          print(line, end='')
+          line = f.readline()
+  # 방법 2. 모든 줄 읽기
+      line = f.readlines()
+
+2절. 피클을 이용한 객체 저장
+      피클 : 모든 객체를 저장하는 파일.data 딥러닝 할 때 사용
+   사용법 : 
+	- 쓰기
+	import pickle
+	with open('파일 경로', 'wb') as f :
+	   pickle.dump(list, f)
+	- 읽기
+	with 
+	load_list = pickle.load(f)
