@@ -1,0 +1,28 @@
+Numpy 패키지 함수와 속성
+- 배열 속성
+   dtype : 요소들의 type
+   itemsize : 요소의 bytesize
+   ndim : 차원수(축수)
+   size : 배열 요소 개수
+   shape : 배열 구조(튜플)
+- 배열 생성 함수
+  np.array(obj, dtype, copy=T)
+  np.array(obj, dtype, copy=T).reshape(구조) # reshape(3,3,3)  3차원
+  np.ones( tup, dtype )  # 기본값 1로 들어감. 
+  np.zeros( tup, dtype ) # 기본값 0으로 들어감.
+  np.full( tup, 초기화 )  # 초기화값이 기본값으로 들어감.
+  np.empty( tup, dtype ) # 해당 타입의 임의의 값으로 들어감
+  #랜덤 생성 함수
+   np.random.random(tup) : 0부터 1 미만의 균등분포를 갖는 랜덤값
+   np.random.uniform(low=0, high=1.0, size=tup) : low부터 high미만의 균등분포를 갖는 랜덤값
+   np.random.normal(loc=0, scale=1.0, size=tup) : 평균 loc과 표준편차scale을 갖는 정규분포 랜덤값
+   np.random.rand(n) : 균등분포의 1차원 난수 배열 발생(난수 n개)
+   np.random.randn(n) : 표준정규분포(평균0, 표준편차1인 정규분포)의 1차원 난수 배열 발생 (난수 n개)
+   np.linspace(from, to, count, dtype) : from 부터 to까지 count개 1차원 배열
+   np.arange(from, stop, step) : from부터 stop 앞까지 step 증감하는 1차원 배열
+
+- 배열 차원 변경
+  reshape()  # 해당 차원으로 변경. ex) arr.reshape(2, -1) => -1은 해당 차원의 크기가 자동 계산됨.
+  ravel(), flatten() : 1차원 변경
+- 배열 dtype 변경
+  astype(np.int64)

@@ -4,7 +4,7 @@
              'w' 또는 'wt' : text 쓰기 모드
              'wb' : 바이너리 쓰기 모드
              'a' 또는 'at' : text 추가 모드(파일이 있으면 append, 파일이 없으면 파일 생성)
-             읽기모드에서는 파일이 없으면 예외/쓰기모드에서는 폴더가 없으면 예외
+             # 읽기모드에서는 파일이 없으면 예외/쓰기모드에서는 폴더가 없으면 예외
 # encoding
     	euc-kr (한글완성형)  믜x
         	cp949(ANSI)  (확정된 한글완성형) : open()함수 기본 encoding방식(window)
@@ -35,3 +35,68 @@
 	- 읽기
 	with 
 	load_list = pickle.load(f)
+
+3절. CSV 형식 파일 읽기, 쓰기
+- list 읽기
+ # ""(따옴표)가 없는 데이터는 numeric으로 
+ import csv
+ with open('data/ch09_member1.csv', 'r', encoding='utf-8') as f:
+     reader = csv.reader(f,
+                                 quoting=csv.QUOTE_NONNUMERIC)
+     result = list(reader)
+ print(list(result))
+
+- list 쓰기
+ user_list=[['홍길동', 20, 'kildong@hong.com', '서울시 관악구'], 
+            ['김길동', 40, 'kimdong@hong.com', '서울시 영등포구']]
+ with open('data/ch09_member1_write.csv', 'w', newline='', encoding='utf-8') as f:
+     writer = csv.writer(f, quoting=csv.QUOTE_NONNUMERIC)
+     writer.writerows(user_list)
+
+- Dict 읽기
+# header가 없는 csv파일(ch-0_member-1cp.csv)을 딕셔너리로 읽기
+ with open('data/ch09_member1-cp.csv', encoding='cp949') as f: # mode는 'r'이 기본값이다
+     dict_reader = csv.DictReader(f,
+                                 fieldnames=['Name','Age','Email','Address'],
+                                  restkey='Job') # restkey 사용시 값 없으면 안받고 있으면 list형태로 받음.
+     result = list(dict_reader)
+ for row in result:
+     print(row)
+
+- Dict 쓰기 
+ with open('data/ch09_member4.csv', 'w', newline='', encoding='utf-8') as f:
+      dict_writer = csv.DictWriter(f,
+                                 fieldnames = fieldnames)
+      dict_writer.writeheader()   # header 쓰기
+      dict_writer.writerows(user_list)
+
+4절 JSON 읽기 쓰기 (dump, load)
+#읽기
+ # ensure_ascii 매개변수
+    # True : 비 ASCII 문자는 유니코드 형태로 저장
+    # False : 비 ASCII 문자 원래 형태로 저장
+   - 딕셔너리 읽기 (dump)
+   import json
+   with open('data/ch09_member.json', 'w', encoding='utf-8') as jsonfile :
+       json.dump(data, # 딕셔너리 리스트
+                jsonfile,
+                ensure_ascii=False,
+                indent='\t')
+   - 객체 읽기 (dump)
+   with open('data/ch09_member1.json', 'w', encoding='utf-8') as jsonfile:
+       json.dump(member_list, # 객체리스트
+                jsonfile,
+                ensure_ascii=False,
+                indent='\t',
+                default=Member.as_dict # 객체를 딕셔너리로 return 하는 인스턴스 함수
+                )
+# 쓰기
+   with open('data/ch09_member1.json', 'r', encoding='utf-8') as f:
+       load_member_list = json.load(f, object_hook=as_member)    ## 해당 객체 형태로 반환
+   for load_member in load_member_list:
+       print(load_member)	
+
+5절. hdf5 파일 읽기 , 쓰기
+# 쓰기
+
+# 읽기

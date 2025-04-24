@@ -1,0 +1,5 @@
+배열 - 동일 자료형의 집합
+1차원 - scalar
+2차원 - vector, matrix
+3차원 - tensor
+
