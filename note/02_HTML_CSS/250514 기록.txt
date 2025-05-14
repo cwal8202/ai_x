@@ -1,0 +1,13 @@
+llm
+issac sim
+
+langchain, huggin face
+llama
+
+<개발 환경>
+- 프로그래밍 언어: Python
+- 모델 라이브러리: Hugging Face, LangChain
+- 데이터 처리: pandas, NumPy
+- 플랫폼: AWS, GCP, Docker, FastAPI
+- 협업 도구: Git, Jira, Slack
+

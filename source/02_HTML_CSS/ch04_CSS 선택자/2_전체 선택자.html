@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        * {    /* 전체 선택자 = 페이지 전체 태그 : 페이지 초기화 */
+            margin:0; /* 밖여백(상, 우, 하, 좌)  */
+            padding:0; /* 안여백(상, 우, 하, 좌) */
+            color:saddlebrown; /* 글자색 */
+        }
+        header, nav, section, footer {
+            width: 500px; /* 가로 사이즈(width 지정하지않으면 block 형태는 부모 width를 따름) */
+            border: 1px solid gray;
+            margin: 1px auto;
+        }
+        nav ul { /* 수평으로 하고픈 태그의 부모 */
+            overflow: hidden;
+        }
+        nav ul li { /* 수평으로 할 태그 */
+            float: left;
+            list-style: none;
+/*            border: 1px solid red;*/
+/*            margin: 10px 25px;*/
+            width: 125px;
+            text-align: center; /* 글씨 가운데 */
+        }
+        section { /* 수평 속성을 지우고 싶은 태그 */
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1> XX 주식회사 </h1>
+    </header>
+    <nav>
+        <ul>
+            <li>회사 소개</li>
+            <li>서비스소개</li>
+            <li>고객센터</li>
+            <li>공지사항</li>
+        </ul>
+    </nav>
+    <section>
+        <p>
+            국무위원은 국정에 관하여 대통령을 보좌하며, 국무회의의 구성원으로서 국정을 심의한다. 이 헌법시행 당시에 이 헌법에 의하여 새로 설치될 기관의 권한에 속하는 직무를 행하고 있는 기관은 이 헌법에 의하여 새로운 기관이 설치될 때까지 존속하며 그 직무를 행한다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.
+        </p>
+    </section>
+    <footer>
+        <p>서울시 00구 00로 99 00빌딩 901호</p>
+    </footer>
+</body>
+</html>

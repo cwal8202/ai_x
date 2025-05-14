@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #wrap{
+            width:750px;
+            margin: 0 auto;
+        }
+        #header {
+            text-align: center;
+        }
+        #content {
+            border-top: 1px solid lightgray;
+            border-bottom : 1px solid lightgray;
+            text-align:justify;
+        }
+        #content p:nth-child(2):first-line,
+        #content p:nth-child(3):first-line{
+            font-weight: bold; /* 글자 진하게 */
+            color: blue; /* 글자색 */
+        }
+        #content p:nth-child(2):first-letter,
+        #content p:last-child:first-letter{
+            font-size: 2.5em /* 글자크기 2.5배 */
+        }
+        #footer ul { overflow: hidden; }
+        #footer ul li {
+            float:left;
+            list-style:none;
+            padding:15px;
+        }
+        #footer ul li:first-child{
+            padding-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h1>제목이나 회사명</h1>
+        </div>
+        <div id="content">
+            <p>오후에 기온 오름. 덥다</p>
+            <p>
+                이 헌법중 공무원의 임기 또는 중임제한에 관한 규정은 이 헌법에 의하여 그 공무원이 최초로 선출 또는 임명된 때로부터 적용한다. 정당의 목적이나 활동이 민주적 기본질서에 위배될 때에는 정부는 헌법재판소에 그 해산을 제소할 수 있고, 정당은 헌법재판소의 심판에 의하여 해산된다. 원장은 국회의 동의를 얻어 대통령이 임명하고, 그 임기는 4년으로 하며, 1차에 한하여 중임할 수 있다.
+            </p>
+            <p>
+                이 헌법중 공무원의 임기 또는 중임제한에 관한 규정은 이 헌법에 의하여 그 공무원이 최초로 선출 또는 임명된 때로부터 적용한다. 정당의 목적이나 활동이 민주적 기본질서에 위배될 때에는 정부는 헌법재판소에 그 해산을 제소할 수 있고, 정당은 헌법재판소의 심판에 의하여 해산된다. 원장은 국회의 동의를 얻어 대통령이 임명하고, 그 임기는 4년으로 하며, 1차에 한하여 중임할 수 있다.
+            </p>
+        </div>
+        <div id="footer">
+            <ul>
+                <li><img src="ch04/logo.png" alt="고용노동부 로고" /></li>
+                <li><img src="ch04/address.png" alt="주소" /></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

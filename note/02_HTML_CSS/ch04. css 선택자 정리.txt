@@ -1,0 +1,51 @@
+1. tag 선택자 : 태그를 특정한다. ex) h1, div
+2. 전체 선택자 : * 페이지 전체에 적용할때 사용.
+3. id, class 선택자 : id는 #, class 는 . 으로 css 속성 설정함.
+4. tag, id, class 혼합 : div#header li.menu1 => id가 header인 div태그 안에 class가 menu1인 li태그
+5. 속성 선택자 : tag 속성을 선택 
+(1)선택자[속성] : 지정한 속성을 가지고 있는 요소를 찾아 스타일을 적용
+(2)선택자[속성=값] : 속성 값이 특정값과 같은 경우를 찾아 스타일을 적용
+(3)선택자[속성^=값] : 속성 값이 지정한 문자로 시작하는 속성값에 대해서만 스타일을 적용
+(4)선택자[속성$=값] : 속성 값이 지정한 문자로 끝나는 속성에 대해서만 스타일을 적용
+ex) input[type="password"] { color:orange; } 	=> type이 "password"인 태그
+    	[type^="te"]{ } 			=> type이 "te"로 시작되는 태그
+	[name$="word"]{ }			=? name이 "word"로 끝나는 태그
+6. 후손 및 자손 선택자 : 
+자손 선택 : div > p		=> div 바로 밑의 p태그만 포함. ex) div li p 접근 불가능.
+후손 선택 : div p		=> 자손 + 더 밑의 p태그 포함 ex) div li p 가능.
+7. 동위(형제) 선택자
+h3~div	=> h3 바로 다음 오는 div 전부(형제)
+h3+div	=> h3 바로 다음에 오는 div 1개(형제)
+8.반응 선택자
+tr:hover { } 	=> 마우스 올려 놓으면 해당 css 실행됨.
+9.상태 선택자 : 
+상태에 따라 css 변화
+focus : focus 됐을때
+enabled : disabled가 안된 활성화 된 상태
+disabled : 비활성화, 입력, 클릭등 안됨. 배경, 글씨도 변경됨.
+read-only : 비활성화 상태지만 배경, 글씨등이 변화없이 그대로.
+10. 구조 선택자
+구조에 따른 css속성 변화
+#wrap ul li:nth-child(2n+1) 		=> li의 홀수번째 태그들
+#wrap ul li:first-chlid		=> li의 첫번째 태그
+#wrap ul li:nth-child(9)~li		=> li의 9번째부터 끝까지 태그들
+11. 문자 선택자
+#wrap ul li:first-chlid(2):first-line 	=> 2번째 li태그의 첫번째 줄만 선택
+#wrap ul li:first-chlid(2):first-letter	=> 2번쨰 li태그의 첫번째 글자만 선택
+12. 링크, 부정 선택자
+링크 선택자 : 링크에 대한 선택 ex) 
+#content a:after {content: ' - ' attr(href);  => a태그의 링크를 a태그 내용 뒤에 붙힘.
+부정 선택자: 같은 범위의 해당 태그 아닌 태그들에 적용
+#content li:not(.shop) { background-color:yellow; }
+
+/** 추가 내용들 **/
+css 구조 : header, nav(메뉴), content, footer
+- 글자크기 : em 사용시 원래의 n배. ex) font-size = 1.5em => 원래 크기의 1.5배
+- block형 태그 가로로 하는법 : 
+1. 부모태그 { overflow : hidden; } : /* overflow를 사용하면 자식 요소에게만 float 적용되게 함. */
+2. 자식태그 { float: left; }	/* width 설정시 block형 태그를 가로로 이동, 아래의 태그들도 다 적용이 된다. */
+3. 외부태그{ clear: both; }	/* 이때 clear:both를 사용시 float속성이 더이상 적용 안되게 해줄수 있다.*/
+
+- div 블록 가운데로 이동.
+width 설정 후 margin: 0 auto 하면 좌우 여백이 알아서 맞춰짐
+text-align으로 글자, img 정렬.
