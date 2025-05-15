@@ -1,0 +1,15 @@
+1. css 단위:
+- em(원 글씨 크기의 몇배) 
+- %(글씨 크기 및 width, height,...)
+- px
+- pt(3pt가 4px)
+
+2. url
+background: url('ch05/test.jpg') center no-repeat => test 이미지를 반복없이 중앙에 정렬.
+
+3. display
+none: 공간없어짐
+inline-block : 상,하 margin 조절 안됨. 자체 width, height는 가짐.
+block : 위아래로 쌓아짐
+
+4. visible

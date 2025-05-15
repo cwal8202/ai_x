@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dokdo&family=Single+Day&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Anton-Regular';
+            src: url('ch05/Anton-Regular.ttf')
+        }
+
+        p.localfont {
+            line-height: 40px; /* 행간격 늘리기 */
+            font-family: Anton-Regular, serif;
+            text-decoration: underline; /* 밑줄 */
+            font-size: 2em;
+            font-style: italic;
+        }
+
+        p.webfont {
+            font-family: "Dokdo", system-ui;
+            font-weight: 400;
+            font-size: 2em;
+        }
+
+        p.webfont2 {
+            font-family: "Single Day", cursive;
+            font-weight: 400;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <p class="localfont">
+        다운받은 ttf파일을 내 경로 안에 넣고 font-face설정한 후 사용
+    </p>
+    <p class="webfont">
+        fonts.google.com의 인터넷 폰트 인터넷 폰트인터넷 폰트인터넷 폰트인터넷 폰트인터넷 폰트인터넷 폰트
+    </p>
+    <p class="webfont2">
+        fonts.google.com의 인터넷가나다라마바사아자차카타파한
+    </p>
+</body>
+</html>
