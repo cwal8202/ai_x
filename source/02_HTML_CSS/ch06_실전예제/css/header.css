@@ -1,0 +1,92 @@
+﻿/* css/header.css */
+/* 페이지 초기화 */
+@font-face { /* 폰트 설정 */
+    font-family: 'Merriweather-Light';
+    src: url('../font/Merriweather-Light.ttf'); /* '../' -> 상위폴더로 이동 */
+}
+@font-face {
+    font-family: 'Merriweather-Regular';
+    src: url('../font/Merriweather-Regular.ttf');
+}
+* {
+    margin:0;
+    padding:0;
+    font-family: 'Merriweather-Regular';
+}
+a{
+    text-decoration:none;
+    color:black;
+    display:block;      /* a태그를 block으로 하면 글자 주위 클릭해도 됨. */
+}
+li {
+    list-style:none;
+}
+/* * * header 부분 * * */
+/* * * header .gnb 부분 * * */
+header .gnb{
+    min-width:1000px;
+    background-color: black;
+    overflow:hidden;
+}
+header .gnb ul {
+    width:1000px;
+    margin: 0 auto;
+}
+header .gnb ul li { /* 수평 */
+    float:left;
+    width:8%;
+    margin: 0 1%;
+    text-align:center;
+    line-height:30px;
+}
+header .gnb >ul li a {
+    color: white;
+}
+/* * * header .logo 부분 * * */
+header .logo {
+    width: 100px;
+    margin: 30px auto;
+    border: 1px solid gray;
+    text-align: center;
+    font-size: 2em;
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    padding: 15px 30px;
+}
+/* * * header .hitmenu 부분 * * */
+header .hitmenu ul{
+    width:1000px;
+    overflow:hidden;
+    margin : 0 auto 3px;
+}
+header .hitmenu ul li {
+    border: 1px solid black;
+    float:right;
+    width: 80px;
+    line-height: 40px;
+    text-align:center;
+}
+header .hitmenu ul li:first-child{
+    border-radius: 0 10px 10px 0;
+}
+header .hitmenu ul li:last-child{
+    border-radius: 10px  0 0 10px;
+}
+/* * * header .lnb 부분 * * */
+header .lnb {
+    border-top: 1px dashed black;
+    border-bottom: 1px dashed black;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+header .lnb ul{
+    width: 1000px;
+    margin: 0 auto;
+}
+header .lnb ul li {
+    width: 10.5%;
+    margin: 0 1%;
+    float:left;
+    line-height:30px;
+    text-align:center;
+}

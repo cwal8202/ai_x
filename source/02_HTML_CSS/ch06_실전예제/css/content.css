@@ -1,0 +1,45 @@
+﻿/* css/content.css */
+#content {
+    width:1000px;
+    margin : 0 auto;
+}
+/* content(가운데) */
+/* section1 */
+#content .section1 {
+    overflow:hidden;
+}
+#content .section1 > div{
+    float:left;
+    line-height:400px;
+    text-align:center;
+    border: 1px solid gray;
+    box-sizing:border-box;
+}
+#content .section1 .slide_banner {
+    width: 700px;
+}
+#content .section1 .side_banner {
+    width: 300px;
+}
+/* section2 */
+/* section2 hit product */
+#content .section2  > div {
+    border: 1px solid gray;
+}
+#content .section2 ul {
+    overflow:hidden;
+    margin: 0 0 10px 0;
+}
+#content .section2 ul li{
+    float:left;
+    width: 24%;
+    margin-right: 0.8%;
+    border: 1px solid gray;
+    box-sizing: border-box;
+    line-height: 400px;
+    text-align:center;
+}
+#content .section2 ul li:first-child {
+     margin-left: 0.8%;
+}
+
