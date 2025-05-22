@@ -1,0 +1,14 @@
+- 변수
+var : 재선언 가능, 주로 전역변수로 사용
+let : 재선언 불가. 블록{ } 레벨 범위에서만 적용
+const : 상수 선언시 사용.
+
+- 증감 연산자
+v++, ++v, --v, v--
+
+- 자료형
+undefined, string, number, boolean, function, object(array)
+
+- 복합대합연산자
+a += 1 => a = a+1
+document.body.innerHTML += list; (html body에 list변수 값 추가하는 것)
