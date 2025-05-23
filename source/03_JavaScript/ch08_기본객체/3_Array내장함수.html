@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <style>
+        
+    </style>
+    <script>
+        var arr1 = new Array('hig', 'abc', 'zzz', 'aaa'); // ['hig', 'abc', 'zzz', 'aaa']
+        var arr2 = [52, 100, 12, 94];
+        let arr1copy = arr1.slice(); // 0~끝까지 슬라이싱 -> 깊은복사
+        arr1copy = Array.from(arr1);   // 깊은 복사
+        arr1copy = [...arr1];          // 깊은복사
+        document.writeln('정렬전 arr1 : ' + arr1 + '<br>');
+        arr1.sort(); // ascii 코드 순으로 정렬
+        document.writeln('정렬후 arr1 : ' + arr1 + '<br>');
+        arr2copy = [...arr2];          // 깊은복사
+        document.writeln('정렬전 arr2 : ' + arr2 + '<br>');
+        arr2.sort(); // 문자로 변환 후 ascii 코드 순으로 정렬 -> 100이 12보다 먼저 나오게 됨.
+        document.writeln('ASCII코드 정렬후 arr2 : ' + arr2 + '<br>');
+        arr.sort((left,right) => {
+            return left - right; // 오름차순 정렬
+            return right - left; // 내림차순 정렬
+        });
+        document.writeln('숫자 정렬후 arr2 : ' + arr2 + '<br>');
+        arr2.reverse(); // 배열 요소의 순서를 뒤집는다.
+        document.write('reverse 후 arr2 : ' + arr2 + '<br>');
+        arr2.sort((left, right) => right-left);
+        document.writeln('top 3: ' + arr2.slice(0,3));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
