@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <style>
+        div{width:300px; margin:0 auto; border:1px solid blue; text-align:center;}
+    </style>
+    <script>
+        /*
+            1. 버튼list가져오기
+            2. 클릭 이벤트 추가.
+            3. url을 name에 적용? or index로 적용? => button url 속성에 추가.
+        */
+        const url = ['https://www.naver.com',
+                    'https://www.daum.net',
+                    'https://www.google.co.kr',
+                    'https://www.youtube.com',];
+        window.addEventListener('load', ()=>{
+            buttonList = document.querySelectorAll('button');
+            for(let i=0; i < buttonList.length; i++){  /* !중요! i변수를 var로 사용할 경우 변수가 계속 유지되어 i가 4가 됨.*/
+                // buttonList[i].url = url[i];
+                buttonList[i].addEventListener('click', function(){
+                    location.href= url[i];
+                });
+            }
+        });
+        // const url = ['http://www.naver.com',
+        //     'http://www.daum.net',
+        //     'http://www.google.com',
+        //     'http://www.youtube.com' ];
+        // window.addEventListener('load', ()=>{
+        // const btns =  document.getElementsByTagName('button');
+        // for(let idx=0 ; idx<btns.length ; idx++){
+        //     btns[idx].addEventListener('click', function(){
+        //     location.href = url[idx];
+        //     });
+        // }
+        // });
+    </script>
+</head>
+<body>
+    <div>
+        <h2>quiz2.메뉴</h2>
+        <p>
+            <button>네이버</button>
+            <button>다음</button>
+            <button>구글</button>
+            <button>유튜브</button>
+        </p>
+    </div>
+</body>
+</html>

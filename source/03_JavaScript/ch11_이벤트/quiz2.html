@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    ul{overflow: hidden;}
+    li{float: left; list-style: none; margin: 3px;}
+  </style>
+  <script>
+    var overImg = ['img/0over.jpg', 'img/1over.jpg', 'img/2over.jpg', 'img/3over.jpg'];
+    var outImg = ['img/0out.jpg', 'img/1out.jpg', 'img/2out.jpg', 'img/3out.jpg'];
+    /*
+        mouseover, out 일때 이미지변경.
+        1. img list가져오기
+        2. 이벤트 추가.
+        3. index로 이미지 변경하기.
+    */
+   window.addEventListener('load', function(){
+    imgList = document.querySelectorAll('img');
+    for(let i=0;i < imgList.length; i++){
+        imgList[i].addEventListener('mouseover', function(){
+            // this.src = this.src.replace("out", "over");
+            this.setAttribute('src', overImg[i]);
+        });
+        imgList[i].addEventListener('mouseout', function(){
+            // this.src = this.src.replace("over", "out");
+            this.setAttribute('src', outImg[i]);
+        });
+    }
+   });
+  </script>
+</head>
+<body>
+  <ul>
+    <li><a href="#"><img src="img/0out.jpg" /></a></li>
+    <li><a href="#"><img src="img/1out.jpg" /></a></li>
+    <li><a href="#"><img src="img/2out.jpg" /></a></li>
+    <li><a href="#"><img src="img/3out.jpg" /></a></li>
+  </ul>
+</body>
+</html>

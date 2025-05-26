@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <style>
+        
+    </style>
+    <script>
+        /*
+            0. load로 img 요소 가져오기.
+            1. 다운, 업 이벤트 생성.
+        */
+    var img;
+    window.addEventListener('load', ()=>{
+        img = document.querySelector('img');
+    });   
+       window.addEventListener('mousedown', ()=>{
+        img.src = img.src.replace("but1", "but2");
+    });
+    window.addEventListener('mouseup', ()=>{
+        img.src = img.src.replace("but2", "but1");
+       });
+    </script>
+</head>
+<body>
+  <img src="img/but1.gif" alt="mouse up" />
+</body>
+</html>

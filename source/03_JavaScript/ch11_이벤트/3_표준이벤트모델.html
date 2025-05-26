@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <script>
+        window.onload = ()=>{
+            var h1= document.getElementById('header');
+            // h1.onclick = function(){ this.innerHTML += 'test';}
+            // 객체.addEventListener(이벤트이름, 리스너함수)
+            h1.addEventListener('click', function(){
+                alert('click했네');
+                this.innerHTML = 'click했네'; // this를 쓰려면 화살표 함수 불가
+                tihs.style.color = red;
+            });
+            var p = document.getElementsByTagName('p')[0];
+            var cnt = 0;
+            for(var key in h1){
+                cnt++;
+                p.innerHTML += cnt + "." + key + ":" + h1[key] + '<br>';
+            }
+            console.log(cnt);
+        };
+    </script>
+</head>
+<body>
+    <h1 id="header">click 해봐</h1>  
+    <p></p>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <style>
+    table{width:500px; margin: 10px auto; background-color: darkgreen;}
+    td{background-color: white; padding: 50px; text-align: center;}
+    </style>
+    <script>      
+        /*
+        상단키 -> 1) 아스키코드 확인 : 0(48) ~ 9(57)
+                2) css yellow.
+        우측키 -> 1)아스키코드 확인 : 0(96) ~ 9(105)
+                2) css red
+        */ 
+    window.addEventListener('keydown', ()=>{
+        var tdList = document.querySelectorAll('td');
+        let key = event.keyCode;
+        // 초기화
+        for(i=0; i < tdList.length; i++){
+            tdList[i].style.backgroundColor = 'white';
+        }
+        // 상단키
+        if(key>=48 && key<= 56){
+            tdList[key-48].style.backgroundColor = 'yellow';
+        }
+        // 우측키
+        else if(key>=96 && key<= 104){
+            tdList[key-96].style.backgroundColor = 'red';
+        }
+    }); 
+    /*
+        하고싶은 것:
+        버튼 누르면 색깔 변경 : O
+        동시에 누르면 둘다 색깔 변경 : keyup을 하지 않은 채로 다른 키 누르면 색깔 추가됨. 각각 td마다 token 부여. 0이면 색깔 변하게. keyup해야지 0이 됨.
+        같은색 누르면 색깔 합쳐짐 : token 0아닌데 이벤트 일어나면 현재 색깔 + 바뀔색깔 .
+    */
+    </script>
+</head>
+<body>
+    <table>
+        <tr><td>0</td><td>1</td><td>2</td></tr>
+        <tr><td>3</td><td>4</td><td>5</td></tr>
+        <tr><td>6</td><td>7</td><td>8</td></tr>
+    </table>
+</body>
+</html>

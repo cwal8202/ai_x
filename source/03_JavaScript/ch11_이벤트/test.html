@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <script>
+        // 페이지 로딩될때
+        document.write('<h1>test</h1>');
+        // html 덮어쓰기
+        document.body.innerHTML += "<h2>test2</h2>";
+        // 요소     추가하기
+        h3 = document.createElement('h3');
+        textNode = document.createTextNode('test3');
+        h3.appendChild(textNode);
+        document.body.appendChild(h3);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

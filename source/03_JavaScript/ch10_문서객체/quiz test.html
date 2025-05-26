@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <style>
+        table {width:280px; height: 100px; margin: 10px auto;} h3{text-align:center;}
+    </style>
+    <script>
+        window.onload = () => {
+            var tr = document.getElementsByName('colorTr')[0];
+            var colorList = ["red","orange","yellow","green","blue","navy","purple"];
+            for(idx in colorList){
+                var td = document.createElement('td');
+                td.setAttribute('class', 'colorTd')
+                td.style.backgroundColor = colorList[idx];
+                tr.appendChild(td);
+            }
+            var tdList = document.getElementsByClassName('colorTd');
+
+            for (var idx=0; idx<tdList.length; idx++){
+                console.log(tdList[idx].style.backgroundColor);
+                tdList[idx].addEventListener('mouseover', ()=>{
+                    // document.body.style.backgroundColor = tdList[idx].style.backgroundColor;
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>quiz1:마우스를 올리면 바탕화면도 해당 색상으로</h3>
+    <table>
+        <tr name="colorTr">
+
+        </tr>
+    </table>
+</body>
+</html>
