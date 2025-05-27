@@ -1,0 +1,29 @@
+AJAX 종류
+- jquery
+ <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+$(document).ready(function(){
+    // jQuery 소스 : $(선택자).action()
+    $('p#p1').click(function(){             // document.querySelecotrAll(css선택자).addEventListener('click', function(){}); 같음.
+        // 'p#p1' 선택자가 click 되었을 때
+        $(this).html('<b>태그 내용이 html에 적용되어 바뀜</b>');        // this.innerHTML('<b></b>'); 같음
+        // $(this).text('<b>태그 내용이 html에 적용되어 바뀜</b>');
+        $(this).css('background-color','red')
+            .css('color', 'yellow');
+    });
+});
+
+- ajax_jquery : 
+$.ajax({
+    url:'요청경로(naver.com?id=aa / xx)', ★ 필수
+    type: 'get' or 'post', 
+    data : 요청파라미터와 값 'id=aaa' 이나 {id:'aaa'},
+    dataType : 'html'/'json' 요청한 경로로 실행한 결과의 타입,
+    success : 요청경로 성공시 수행할 콜백함수, ★ 필수
+    error : 요청경로 실패시 수행할 콜백함수
+});
+
+- ajax_fetch : 
+      fetch('url' , {method:'get'})  // url, get 방식
+	.then(response=>{})  // 해당 url로 ajax보낸 뒤 return 받는 값
+	.then(data=>{})	// data = response함수의 return 값
+	.catch(error=>{});  // error 나면 error 에 값 담김
