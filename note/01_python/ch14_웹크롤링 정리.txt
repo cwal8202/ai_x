@@ -1,0 +1,8 @@
+정적웹데이터 수집
+방법1 : request 모듈이용
+response = requests.get(url) # url에 한글, 특수문자(' ')
+soup = BeautifulSoup(response.text, 'html.parser')
+
+방법2 : urllib.request 모듈이용
+url = urllib.parse.quote('한글부분') # 한글입력시 에러남. encoding 해야함.
+response = urllib.request.urlopen(url) 

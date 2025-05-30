@@ -1,0 +1,24 @@
+- 웹크롤링
+1) 정적 웹크롤링
+import requests 	# HTTP 요청(get, post) 보내서 HTML 코드 가져옴.
+from bs4 import BeautifulSoup   # 해당 HTML 코드를 파싱하기 쉽게 객체화 시킴
+   response = requests.get("path")
+   soup = BeautifulSoup(response.content, "html.parser")
+   soup.select('css 선택자')
+
+2) 동적 웹크롤링
+   - selenium.webdriver
+**기본 import 해야할 내용**
+from selenium import webdriver	# 웹브라우저 접근 라이브러리
+from selenium.webdriver.common.by import By	  # HTML 요소 접근 라이브러리
+from selenium.webdriver.common.keys import Keys  # 키보드 입력 라이브러리
+import time
+
+- web 주소로 접근
+driver = webdriver.Chrome()   #chrome으로 설정함.
+driver.get("http://www.python.org")   # url 접근
+- web 태그 접근 방법
+element = driver.find_element(By.NAME, 'q') # name, id, className, tagName 등 태그의 요소들로 접근., '해당 CSS선택자'
+elemet.send_keys('pycon')  # 해당 태그에 'pycon' 입력
+element.click()	# 해당 태그 클릭 발생.
+

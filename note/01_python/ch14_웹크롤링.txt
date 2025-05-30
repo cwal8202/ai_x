@@ -1,0 +1,17 @@
+- 웹크롤링
+# 방법1 // import requests
+response = request.get(url) -> 해당 url로 요청 보낸 후 header 및 html 값 return 받음.
+response.content -> html 값들. binary 형식.
+response.content.decode('utf-8') == response.text // 한글 값으로 디코딩
+soup = BeautifulSoup(response.content, "html.parser") // B.S 객체로 파싱함.
+
+# 방법2 // from urllib.request import urlopen
+response = urlopen(url) -> 해당 url 로 markup 값 가져옴
+soup = BeautifulSoup(response, 'html.parser') # urlopen으로 가져온 값은 response 만 입력해야함!
+
+- BeautifulSoup // from bs4 import BeautifulSoup
+BeautifulSoup => header, html등을 받은 response에서 html을 css선택자로 호출 할 수 있는 객체.
+
+- BeautifulSoup 함수 종류 ( select('css선택자'), select_one('css선택자'), find(태그, 속성), find_all(태그, 속성)
+soup.find_all(['h1', 'span'] , {'id':'text'}]) => h1, span 태그 중 id가 text인 값들 return (만약 span에 id:text가 없으면 h1만)
+text_el = soup.select('div#id > span.name') // id=id 인 div태그의 class명이 name인 태그의 값들.
