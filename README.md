@@ -52,4 +52,4 @@
   <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
  </div>
 
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=comlec&show_icons=true&theme=radical)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=cwal8202&show_icons=true&theme=radical)
