@@ -1,0 +1,21 @@
+서버 구동 -> manage.py -> settings -> urls -> views -> urls.py에 등록한 views.함수 실행으로 화면 렌더링
+
+하나의 service 기준이 app이다. ex) member의 crud, 게시판의 crud등이 app.
+
+python manage.py -> manage.py의 전체 기능들 보여줌
+
+python manage.py runserver -> 서버 구동
+python manage.py startapp home -> home 이라는 app 생성, 
+# settings.py의 INSTALLED_APPS에 추가해야함 "home"
+
+
+client요청 -> view(controller) -> model(model), template(view) -> client 응답
+
+- controller 추가
+settings 
+
+- templates 추가
+settings 안에 TEMPLATES "DIRS"에 추가해도 되고 추가한 app폴더 밑에 templates 추가해도 됨.
+
+-static (딥러닝 모델 넣어도됨)
+settings 안에 STATIC_URL에 추가 또는 app폴더 밑에 static폴더 추가
