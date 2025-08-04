@@ -1,0 +1,117 @@
+{% extends 'web_base.html' %}
+
+{% block title %}페르소나 생성하기{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>개인 페르소나 생성</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f8f9fa; margin: 0; padding: 0; }
+        .container { max-width: 720px; margin: 40px auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h2 { text-align: center; margin-bottom: 24px; }
+        .section { margin-bottom: 24px; }
+        .section-title { font-weight: bold; margin-bottom: 8px; }
+        .btn-group { display: flex; flex-wrap: wrap; gap: 8px; }
+        .btn-option {
+            border: 1px solid #ccc;
+            padding: 10px 16px;
+            border-radius: 8px;
+            background-color: #f1f1f1;
+            cursor: pointer;
+        }
+        .btn-option.selected { background-color: #4f46e5; color: white; border-color: #4f46e5; }
+        .submit-btn {
+            width: 100%;
+            background-color: #6366f1;
+            color: white;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.btn-option').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const group = btn.closest('.btn-group');
+                    if (!btn.classList.contains('multi')) {
+                        group.querySelectorAll('.btn-option').forEach(b => b.classList.remove('selected'));
+                    }
+                    btn.classList.toggle('selected');
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <h2>페르소나 생성하기</h2>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="section">
+            <div class="section-title">연령</div>
+            <div class="btn-group">
+                {% for age in age_list %}
+                    <div class="btn-option" data-name="age">{{ age }}</div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">성별</div>
+            <div class="btn-group">
+                {% for gender in gender_list %}
+                    <div class="btn-option" data-name="gender">{{ gender }}</div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">가족 구성</div>
+            <div class="btn-group">
+                {% for option in family_list %}
+                    <div class="btn-option" data-name="family">{{ option }}</div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">고객 취향</div>
+            <div class="btn-group">
+                {% for pref in preference_list %}
+                    <div class="btn-option multi" data-name="preference">{{ pref }}</div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">고객 가치 (RFM)</div>
+            <div class="btn-group">
+                {% for value in value_list %}
+                    <div class="btn-option" data-name="value">{{ value }}</div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">라이프스타일</div>
+            <div class="btn-group">
+                {% for style in lifestyle_list %}
+                    <div class="btn-option multi" data-name="lifestyle">{{ style }}</div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <button type="submit" class="submit-btn">설정</button>
+    </form>
+</div>
+</body>
+</html>
+{% endblock %}

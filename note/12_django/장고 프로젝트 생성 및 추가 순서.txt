@@ -1,0 +1,12 @@
+django 순서
+1. 가상환경 생성, 	1. pip install django, pip install python-decouple
+		2. django-admin startproject ch02 . # ch02라는 프로젝트 생성.
+		3. .env에 SECRET-KEY 생성 후 "settings.py"로 config("SECRET-KEY") 생성
+		4. python manage.py startapp home # 앱기능 추가함
+		5. settings.py의 INSTALLED_APPS 에 app 등록 # "home",
+		6. ROOT_URLCONF을 확인하면 "ch02.urls"가 있다. # 요청 기능은 urls.py로 가면 됨.
+		7. urls.py 에서 "from home import views" 추가 후 
+			urlpatterns 에 path("",views.index, name="index") 추가.
+		8. home/views.py에 def index(request)  함수 생성.
+		
+url -> index -> view 이런 순서?
