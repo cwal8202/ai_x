@@ -1,0 +1,33 @@
+models.py 에 생성할 table_class 작성 후
+python manage.py makemigrations -> models.py를 본 후 model 생성 하기 위한 소스
+python manage.py migrate -> migrations 확인 후 테이블 생성
+
+admin.py에 register 해야지 admin에서 테이블 확인 가능.
+
+# cmd에서 orm 접근하는 법
+.venv\Script\activate (가상환경 진입)
+python mange.py shell (장고 shell 실행)
+
+# CREATE
+st = Student(name="hong", major="computer", age=22, grade=2)
+st.save() # save해야지 저장됨
+# READ
+st = Student.objects.all() # 전체 읽기
+st = Student.objects.get(name=1) # 조건 읽기
+st = Student.ojbects.filter(age__lt=30) # 필터로 읽기 - 나이 30보다 작은
+   __lt : 보다 작다
+   __lte : 보다 작거나 같다
+   __gt : ~보다 크다
+   __gte : ~보다 크거나 같다
+   __isnull : null인 자료
+   __contains : 특정 문자열 포함 name__contains = ‘k’
+
+# UPDATE
+st = Student.objects.get(name="hong")
+st.age = 30 # 데이터 수정
+st.save()
+
+# DELETE
+st = Student.objects.get(name="hong")
+st.delete() # 데이터 삭제
+Student.objects.filter(age__lt=30).delet() # 조건 삭제
